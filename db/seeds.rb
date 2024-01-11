@@ -13,6 +13,7 @@ puts 'Creating 10 new restaurants'
   rest = Restaurant.create!(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
+    phone_number: Faker::PhoneNumber.phone_number,
     category: %w[Chinese Italian Japanese French Belgian].sample
   )
   puts "#{rest.name} has been created"
