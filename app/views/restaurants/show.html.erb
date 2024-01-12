@@ -2,7 +2,18 @@
 
 <ul>
   <li><%= @restaurant.address %></li>
+  <li><%= @restaurant.phone_number %></li>
   <li><%= @restaurant.category %></li>
 </ul>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
+
+<%# <%= link_to 'Write a New Review', restaurants_reviews_new_path(@restaurant) %> 
 
 <%= link_to 'Back to Index', restaurants_path %>
